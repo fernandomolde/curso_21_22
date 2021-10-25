@@ -1,6 +1,6 @@
 import random
 
-def genera_equipos(alumnos,   miembros =2):
+def genera_equipos(alumnos, miembros =2):
     random.shuffle(alumnos)
     equipos = []
 
