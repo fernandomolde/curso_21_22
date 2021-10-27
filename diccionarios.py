@@ -27,6 +27,6 @@ vscode = {
         }
     ]
 }
-vscode['configurations'][0]['type'] = 'Manolito'
+vscode['configurations'][0]['type'] = 'Manolito'  # el 0 sirve para entrar en la lista
 
 pprint.pprint(vscode)
