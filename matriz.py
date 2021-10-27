@@ -9,14 +9,32 @@
 #     print(x)
 
 import pprint
-cols = 15
-filas = 15
+cols = 10
+filas = 10
 matriz = []
 
 for i in range(filas):
     fila = []
     for j in range(cols):
-        fila.append('X')
+        fila.append(f"{i}-{j}")
     matriz.append(fila)
 
-pprint.pprint(matriz)
+
+# matriz[5][6] = 'Agua'
+# print(matriz[5][6])
+# matriz[9][2] = '***'
+# pprint.pprint(matriz)
+
+for i in range(filas):
+    linea = ''
+    for j in range(cols):
+        linea += matriz[i][j]
+    print(linea)
+
+M = 1,2,3
+    4,5,6
+    7,8,9
+                        # Multiplicar las dos matrices
+H = 9,8,7
+    6,5,4
+    3,2,1
