@@ -1,6 +1,4 @@
-PRECIO_SEMANA = 100 
-PRECIO_DIA = 42
-DIAS = 7
+from constantes_parking import DIAS, PRECIO_DIA, PRECIO_SEMANA 
 
 def parking(dias):
     #1.- Calcular las semanas
