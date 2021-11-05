@@ -16,18 +16,29 @@ for a in archivo:
         lista_archivo.append(a.name[:-3:])
 
 
+
+
+
 # Agrupalos de 5 en 5 
+
 for i in range(0,len(lista_archivo),miembros):
     temp = lista_archivo[i: i + miembros]
     fila += ','.join(temp) + '\n'
-
-
 
 # Guardar archivos en el fichero 
 nuevo = open(ruta_salida + '/lista_py.txt','w')    
 nuevo.write(fila)
 nuevo.close()
 
+
+# 2º forma
+nuevo = open(ruta_salida + '/lista_py.txt','w')  
+for i in range(0,len(lista_archivo),miembros):
+    temp = lista_archivo[i: i + miembros]
+    nuevo.write(','.join(temp) + '\n')
+
+
+nuevo.close()
 
 
 
