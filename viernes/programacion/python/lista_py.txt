@@ -1,0 +1,7 @@
+rutas_actividad,condicionales,notas,adivina,fecha_nacimiento
+Adivina_2,Ficheros_2,ejemplo_funcs_2,listas,settings
+ejercicio matriz,holamundo,diccionarios,diccionario_2,ejercicio matriz 1
+constantes_parking,genera_equipos,operaciones_listas,Variables_actividad,genera_equipos_2
+fun_datos,rutas,comparar_listas,funciones_1,diccionario_Actividad
+Tuplas,bucles,referencia_valor,cortar_cadenas,bucle_cadena
+ejemplo_funcs_1,variables,diccionario_3,matriz,Ficheros_1
