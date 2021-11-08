@@ -1,8 +1,8 @@
 import os
 import settings
 
-
-
+def clear():
+    os.system('clear')
 
 def buscar(ruta_de_busqueda,extension = '.py'):
     lista_archivo = []
@@ -26,7 +26,7 @@ def escribir(cadena, archivo):
 
 ruta = settings.RUTA_BASE + settings.CODIGO + settings.MI_CARPETA
 ruta_salida = settings.RUTA_BASE + settings.CODIGO + settings.MI_CARPETA
-
+clear()
 x = buscar(ruta)
 f = agrupar(x,5)
 escribir(f,ruta_salida + '/funciones_lista.txt')
