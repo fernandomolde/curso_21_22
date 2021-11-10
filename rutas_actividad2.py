@@ -17,7 +17,8 @@ def agrupar(lista_archivo, miembros):
     for i in range(0,len(lista_archivo),miembros):
             temp = lista_archivo[i: i + miembros]
             fila += ','.join(temp)+ '\n'
-    return fila
+    return fila [:-1:]
+
 def escribir(cadena, archivo):
     nuevo = open(archivo,'w')    
     nuevo.write(cadena)
@@ -27,7 +28,7 @@ def escribir(cadena, archivo):
 ruta = settings.RUTA_BASE + settings.CODIGO + settings.MI_CARPETA
 ruta_salida = settings.RUTA_BASE + settings.CODIGO + settings.MI_CARPETA
 clear()
-x = buscar(ruta)
+x = buscar(ruta,)
 f = agrupar(x,5)
-escribir(f,ruta_salida + '/funciones_lista.txt')
+escribir(f,ruta_salida + '/lista_py.txt')
 print(f)
