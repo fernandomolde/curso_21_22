@@ -5,9 +5,12 @@ def decode(message):
     inversa = alfabeto[::-1]
     salida = ''
     for letra in message:
-        idx = alfabeto.index(letra)
-        salida += inversa[idx]
-    return salida 
+       if letra.isalpha():
+            idx = alfabeto.index(letra)
+            salida += inversa[idx]
+    else:
+        salida +=letra
+        return salida 
    
 
  
