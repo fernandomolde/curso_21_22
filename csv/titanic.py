@@ -2,7 +2,7 @@ import os
 import csv
 import pprint   
 
-os.system('clear')
+os.system('cls')
 
 ruta = '/home/fer/codigo/curso_21_22/csv/'
 
@@ -10,9 +10,7 @@ ruta = '/home/fer/codigo/curso_21_22/csv/'
 def leer_archivo():
     csv_in = open(ruta + 'titanic.csv') 
     lector_dic = csv.DictReader(csv_in)
-
     lista_dict = list(lector_dic)
-
     csv_in.close()
     return lista_dict
 
@@ -24,7 +22,6 @@ def leer_valores():
     for persona in titanic_list:
         survivors.append(persona['Survived'])  
     return survivors
-
 
 # 3- contar (0=muerto, 1=vivo)
 def contar_vivos_muertos():
