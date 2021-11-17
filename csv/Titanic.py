@@ -2,29 +2,29 @@ import os
 import csv
 import pprint   
 
-os.system('cls')
+os.system('clear')
 
 ruta = '/home/fer/codigo/curso_21_22/csv/'
 
 # 1- leer el archivo (como diccionario)
 def leer_archivo():
-    csv_in = open(ruta + '/Titanic.csv') 
+    csv_in = open(ruta + 'titanic.csv') 
     lector_dic = csv.DictReader(csv_in)
 
     lista_dict = list(lector_dic)
 
     csv_in.close()
     return lista_dict
-    
+
+
 # 2- leer valores de campos survived
 def leer_valores():
     survivors = []
     titanic_list = leer_archivo()
     for persona in titanic_list:
-        actual_person = persona.values()
-        for actual in actual_person:
-            survivors.append(actual[2])
+        survivors.append(persona['Survived'])  
     return survivors
+
 
 # 3- contar (0=muerto, 1=vivo)
 def contar_vivos_muertos():
