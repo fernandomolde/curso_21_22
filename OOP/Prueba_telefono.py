@@ -28,6 +28,9 @@ class telefono():
     def recibir_llamadas(self):
         pass
 
+    def __str__(self):                   #Metodo
+        return f'Color : {self.Color}\nMarca: {self.marca}\nPeso: {self.Peso}\n Sistema Operativo: {self.Sistema_op}\n Modelo: {self.modelo}\nCamara: {self.Camara}'
+
 os.system('clear')
 tele = telefono
 tele.Color = 'Azul'
@@ -35,7 +38,7 @@ tele.marca = 'Xiami'
 tele.Peso = '3,4Kg'
 tele.Sistema_op = 'Android'
 tele.modelo = 'Xiami 11'
-tele.Camara = ''
+tele.Camara = 'Si'
 
 print(tele.Color)
 print(tele.marca)
