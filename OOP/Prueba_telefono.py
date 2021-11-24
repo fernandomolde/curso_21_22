@@ -36,8 +36,10 @@ tele.Peso = '3,4Kg'
 tele.Sistema_op = 'Android'
 tele.modelo = 'Xiami 11'
 tele.Camara = ''
+
 print(tele.Color)
 print(tele.marca)
 print(tele.Peso)
 print(tele.Sistema_op)
 print(tele.modelo)
+print(tele.Camara)
