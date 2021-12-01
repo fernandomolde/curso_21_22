@@ -24,8 +24,10 @@ class Gallo(Pajaro):
 class CoroPajaros():
     coro =[Gorrion(),Gallo()]
     def cantar(self):
+        titulo = True
         for p in self.coro:
-            p.cantar()
+            p.cantar(titulo)
+            titulo = False
 
 
 c = CoroPajaros()
