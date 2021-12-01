@@ -22,15 +22,17 @@ class Gallo(Pajaro):
 # gallo.cantar()
 
 class CoroPajaros():
-    coro =[Gorrion(),Gallo()]
+
+    def __init__(self,lista_pajaros) -> None:
+        self.coro = lista_pajaros
     def cantar(self):
         titulo = True
         for p in self.coro:
             p.cantar(titulo)
             titulo = False
 
-
-c = CoroPajaros()
+lista_pajaros = ['p',1,'l']     #[Gallo(),Gallo(),Gorrion()]
+c = CoroPajaros(lista_pajaros)
 c.cantar()
 
 
