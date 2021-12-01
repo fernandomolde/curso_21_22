@@ -27,5 +27,8 @@ class CoroPajaros():
         for p in self.coro:
             p.cantar()
 
+
 c = CoroPajaros()
 c.cantar()
+
+
