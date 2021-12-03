@@ -18,7 +18,7 @@ class Punto():
 
 
 class Rectangulo():
-    v1,v2,v3,v4 = Punto(0,0)
+    v1 = v2 = v3 = v4 = Punto(0,0)
     
     def __init__(self,p1,p2) -> None:
         self.v1 = p1
