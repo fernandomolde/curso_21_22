@@ -1,5 +1,10 @@
+import os
+import csv
+
+
 class Generador():
-    __esqueleto = """
+   __lista = None
+   __esqueleto = """
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -16,9 +21,36 @@ class Generador():
     def __generar_esqueleto(self):
         return self.__esqueleto
 
-    def __generar_tabla(self,lista):
-        pass
+    def __generar_tabla(self):
+        if self.__lista:
+            tabla = '<table><tr>'
+            cabecera = (self.__lista[0].keys)
+            for c in cabecera:
+                tabla += f'<td>{c}</td>'
+            tabla += '</tr>'
+        return tabla
+            
 
     def generar_pagina(self, lista):
+        self.__lista = lista
         if not lista:
             return self.__generar_esqueleto()
+        else:
+            pag = self.__generar_tabla()
+            print(pag)
+
+
+#---------------------------------------------
+def leer_dict():                               
+    csv_in = open('/home/fer/codigo/curso_21_22/generador/titanic.csv') 
+    lector_dic = csv.DictReader(csv_in)
+        
+    lista_dict = list(lector_dic)
+
+    csv_in.close()
+    return lista_dict
+
+
+elementos = leer_dict()
+g = Generador()
+pagina = g.generar_pagina(elementos)
