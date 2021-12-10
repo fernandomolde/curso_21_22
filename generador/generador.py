@@ -18,10 +18,10 @@ class Generador():
         </body>
         </html>
     """
-    def __generar_esqueleto(self):
+def __generar_esqueleto(self):
         return self.__esqueleto
 
-    def __generar_tabla(self):
+def __generar_tabla(self):
         if self.__lista:
             tabla = '<table><tr>'
             cabecera = (self.__lista[0].keys)
@@ -31,7 +31,7 @@ class Generador():
         return tabla
             
 
-    def generar_pagina(self, lista):
+def generar_pagina(self, lista):
         self.__lista = lista
         if not lista:
             return self.__generar_esqueleto()
