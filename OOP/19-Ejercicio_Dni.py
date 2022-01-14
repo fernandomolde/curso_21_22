@@ -50,7 +50,7 @@ class Nif():
 
 
     def calc_letra(self,numero):
-        numero = numero //23 
+        numero = numero % 23 
         return numero
 
     
