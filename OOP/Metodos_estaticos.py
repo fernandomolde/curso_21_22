@@ -1,7 +1,3 @@
-
-import re
-
-
 class Estudiante():
     def __init__(self, nombre, apellidos) -> None:
         self.nombre = nombre
