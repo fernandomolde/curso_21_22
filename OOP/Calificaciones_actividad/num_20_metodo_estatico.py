@@ -2,33 +2,33 @@
 Crear una clase Calificaciones.
 Tendrá un método init que admitira como entrada una lista de forma ['Raul',9.2,5,4.5,7.9,1]
 Tendrá un método 'calificar' que nos devolvera ['Raul','Notable']
-
 """
 
 # 1-Crear la clase
+
 class calificaciones():
  # 2-Metodo Init
     def __init__(self,alum_notas = []) -> None:
  
             if alum_notas:
-                self.nombre = alum_notas[0]
-                self.notas = alum_notas[1:]
-                self.calificacion = self.calcula_calificacion()
+                self.__nombre = alum_notas[0]
+                self.__notas = alum_notas[1:]
+                self.__calificacion = self.calcula_calificacion()
           
             else:
-                self.nombre = ''
-                self.notas = []
-                self.calificacion = []
+                self.__nombre = ''
+                self.__notas = []
+                self.__calificacion = []
     
     def __str__(self) -> str:
         # return f'Alumno: {self.nombre} tiene de calificacion: {self.calificacion}'
-            return f'Alumno: {self.nombre} tiene la calificación {self.calificacion}'
+            return f'Alumno: {self.__nombre} tiene la calificación {self.__calificacion}'
 
     def calcula_calificacion(self):
         calificacion = ''
         
-        if self.notas:
-            notas_media = sum(self.notas)/len(self.notas)
+        if self.__notas:
+            notas_media = sum(self.__notas)/len(self.__notas)
 
             if notas_media < 5 :
                 calificacion = 'suspenso'
@@ -47,7 +47,38 @@ class calificaciones():
             
         return calificacion
 
+    
+    @property
+    def alumno(self):
+        return self.__nombre
 
+    
 
-Alum_1 = calificaciones(['Raul',9.2,5,4.5,7.9,1])
-print(Alum_1)
+    @alumno.setter
+    def alumno(self,nuevo_alumno):
+        self.__nombre = nuevo_alumno
+            
+    @property
+    def notas(self):
+        return self.__notas 
+    
+    @notas.setter
+    def notas(self,nuevas_notas):
+       self.notas = nuevas_notas
+       self.__calificacion = self.calcula_calificacion()
+
+    @property
+    def calificacion(self):
+        return self.__calificacion
+
+    @staticmethod
+    def valida_notas(lista_notas):
+        valido = True
+        if lista_notas == []:
+            valido =  False
+
+        for nota in lista_notas:
+            if not type(nota) in (int,float) or not (0.0 <= nota <=10.0):
+                valido = False
+
+        return valido
