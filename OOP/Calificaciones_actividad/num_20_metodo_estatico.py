@@ -2,9 +2,18 @@
 Crear una clase Calificaciones.
 Tendrá un método init que admitira como entrada una lista de forma ['Raul',9.2,5,4.5,7.9,1]
 Tendrá un método 'calificar' que nos devolvera ['Raul','Notable']
+
+T0D0:
+ - Crear lista de alumnos a partir de un archivo (CSV,Long,fija,etc)
+ - Crear lista a partir de base de datos
+ - Crear lista a partir de JSON
+
 """
 
 # 1-Crear la clase
+
+from num_20_metodo_estatico import NotasInvalidasError
+
 
 class calificaciones():
  # 2-Metodo Init
@@ -64,8 +73,12 @@ class calificaciones():
     
     @notas.setter
     def notas(self,nuevas_notas):
-       self.notas = nuevas_notas
-       self.__calificacion = self.calcula_calificacion()
+       try:
+           if self.valida_notas(nuevas_notas):
+               self.__notas = nuevas_notas
+               self.__calificacion = self.calcula_calificacion()
+       except NotasInvalidasError:
+           pass 
 
     @property
     def calificacion(self):
@@ -75,8 +88,8 @@ class calificaciones():
     def valida_notas(lista_notas):
         valido = True
         if lista_notas == []:
-            valido =  False
-
+            # valido =  False
+            raise NotasInvalidasError('la lista de notas esta vacia')
         for nota in lista_notas:
             if not type(nota) in (int,float) or not (0.0 <= nota <=10.0):
                 valido = False

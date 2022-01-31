@@ -1,3 +1,11 @@
+from logging import exception
+
+
+
+class NotasInvalidasError(exception):
+    pass            
+
+
 class Estudiante():
     def __init__(self, nombre, apellidos) -> None:
         self.nombre = nombre
